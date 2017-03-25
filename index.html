@@ -1,139 +1,130 @@
 <!DOCTYPE HTML>
 
-<html>
+<html lang="en">
 
 <head>
-    <title>Locations(change this title later)</title>
-    <meta http-equic="Content-Security-Policy" content="default-src *; style-src 'self' http://* 'unsafe-inline'; script-src 'self' http://* 'unsafe-inline' 'unsafe-eval'"/>
+    <title>No Name Extension</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
     <!--External CSS import-->
+    <link rel="stylesheet" href="css/style.css" type="text/css"/>
+    <!--bootstrap 4 v 4.0.0-->
     <link rel="stylesheet" href="https://cdn.rawgit.com/twbs/bootstrap/v4-dev/dist/css/bootstrap.css"/>
     <link rel="stylesheet"
           href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href=""/>
 
-          <!--External CDN script imports-->
-          
+    <!--External CDN script imports-->
     <script src="./js/jquery-3.1.1.min.js"></script>
     <script src="./js/bootstrap.min.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js?libraries=geometry&key=AIzaSyAdp3O-uxOmY4vd7k8EfCfcg_cLYooZhOw"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
-    <link rel="stylesheet" href="css/style.css" type="text/css"/>
-
-    <style>
-    body{
-      background-image: url(bg-5-full.jpg);
-      background-size: 100% 100%;
-    }
-        #siteLoader {
-            position: relative;
-            padding-bottom: 75%;
-        / / This is the aspect ratio height: 0;
-            overflow: hidden;
-        }
-
-        #mapBox {
-            border: 0;
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100% !important;
-            height: 100% !important;
-
-        }
-        #main-container{
-          position: absolute;
-          top:50%;
-        }
-
-        /*Header styles */
-        h1{
-          font-size: 3em;
-          font-family: arial,helvetica;
-          color: grey;
-          margin:0;
-          position: absolute;
-          top:20%;
-          left: 26%;
-        }
-        h2{
-          font-size: 3em;
-          font-family: arial,helvetica;
-          color: grey;
-          margin:0;
-          position: absolute;
-          top:67%;
-          left:37%;
-        }
-
-    </style>
 
 </head>
 
 <body>
-  <!-- The h2 tag had to be outside of main div-->
-<h2 style = "color:white"id="output" > </h2>
+<ul id="ui-buttons">
+    <li class="fa fa-question-circle fa-4x help" aria-hidden="true"></li>
+    <li class="fa fa-times-circle fa-4x exit" aria-hidden="true"></li>
+</ul>
 
 <div id="main" style="width: 100%; height: 100%">
     <div id="siteLoader">
-        <h1 style="color:white">Getting things together.. Please Wait</h1>
-
-<!-- pinwheel in html side-->
-        <div class="main-container">
-          <div id="pinwheel-container">
-            <div id="pin-1">
-              <div class="pin-base"></div>
-              <div class="pin-big-triangle"></div>
+        <header class="text-center">
+            <h1 style="color:white"class="h1">Getting things together...</h1>
+            <h2 style="color:white"></h2>
+            <!-- pinwheel in html side-->
+            <div class="main-container">
+                <div id="pinwheel-container">
+                    <div id="pin-1">
+                        <div class="pin-base"></div>
+                        <div class="pin-big-triangle"></div>
+                    </div>
+                    <div id="pin-2">
+                        <div class="pin-base"></div>
+                        <div class="pin-big-triangle"></div>
+                    </div>
+                    <div id="pin-3">
+                        <div class="pin-base"></div>
+                        <div class="pin-big-triangle"></div>
+                    </div>
+                    <div id="pin-4">
+                        <div class="pin-base"></div>
+                        <div class="pin-big-triangle"></div>
+                    </div>
+                    <div class="pinwheel-center-circle">
+                    </div>
+                </div>
             </div>
-            <div id="pin-2">
-              <div class="pin-base"></div>
-              <div class="pin-big-triangle"></div>
-            </div>
-            <div id="pin-3">
-              <div class="pin-base"></div>
-              <div class="pin-big-triangle"></div>
-            </div>
-            <div id="pin-4">
-              <div class="pin-base"></div>
-              <div class="pin-big-triangle"></div>
-            </div>
-            <div class="pinwheel-center-circle">
-            </div>
-          </div>
-        </div>
-        <div class="pinwheel-stick"></div>
-
+            <!-- The h2 tag had to be outside of main div-->
+            <h2 id="output" class="h2"></h2>
+            <div class="pinwheel-stick"></div>
+        </header>
     </div>
 </div>
 
-<div class="modal" id="dialog">
+<!--alerts modal for error handling-->
+<div class="modal" id="myModal">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modalName">Modal title</h5>
+            </div>
+            <div class="modal-body" id="modalMessage">
+                <p>Modal body text goes here.</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" id="reloadApp">Refresh</button>
+                <button type="button" class="btn btn-danger" id="exitApp">Exit</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal" id="myHelp">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">User Guide</h5>
+            </div>
+            <div class="modal-body">
+
+
+                <h6 style="display: block">Key</h6>
+                <dl>
+                    <dd><img src="icon.png"></dd>
+                    <dt>Predefined locations on map</dt>
+                    <dd><i class="fa fa-question-circle fa-2x"></i></dd>
+                    <dt>Click for help</dt>
+                    <dd><i class="fa fa-times-circle fa-2x"></i></dd>
+                    <dt>Close/Exit the application</dt>
+                    <dd><img src="Marker-48.png"></dd>
+                    <dt>Current location. <span
+                            style="color: tomato; font-weight: bold">NB: May not be 100% accurate</span>
+                    </dt>
+                </dl>
+
+
+            </div>
+
+
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+        </div>
+    </div>
+</div>
+
+<div id="alertBox">
+
 
 </div>
 
-<!-- Script for the countdown-->
-<script>
-var i = 10;
-
-function startTimer() {
-
-    var countdownTimer = setInterval(function() {
-
-        document.getElementById("output").innerHTML= i +" seconds remaining.";
-        i = i - 1;
-
-        if (i <= 0) {
-            clearInterval(countdownTimer);
-        }
-
-    }, 1000);
-
-}
-
-startTimer();
-</script>
 <script src="./js/functions.js"></script>
 <script src="./js/scripts.js"></script>
 <script src="./waypoint.js"></script>
-
-
 </body>
 
 </html>
