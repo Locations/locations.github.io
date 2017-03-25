@@ -10,20 +10,24 @@ html, body {
 
 /*Header styles */
 h1 {
+    text-size: 3em;
+    position:absolute;
     font-family: arial, helvetica, sans-serif;
     color: grey;
     margin: 0;
     top: 20%;
-    left: 27%;
+    left: 34%;
 
 }
 
 h2 {
+    text-size: 2em;
+    position:absolute;
     font-family: arial, helvetica, sans-serif;
     color: grey;
     margin: 0;
     top: 64%;
-    left: 32%;
+    left: 39%;
 
 }
 
@@ -98,7 +102,7 @@ h2 {
 /*pinwheel animation*/
 .main-container {
     left: 46.4%;
-    top: 25%;
+    top: 30%;
     width: 100px;
     height: 100px;
     margin: 30px auto;
