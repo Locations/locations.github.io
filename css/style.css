@@ -10,27 +10,22 @@ html, body {
 
 /*Header styles */
 h1 {
-    text-size: 3em;
-    position:absolute;
     font-family: arial, helvetica, sans-serif;
     color: grey;
     margin: 0;
+    position: absolute;
     top: 20%;
-    left: 34%;
-
+    left: 38%;
 }
 
 h2 {
-    text-size: 2em;
-    position:absolute;
     font-family: arial, helvetica, sans-serif;
     color: grey;
     margin: 0;
-    top: 64%;
-    left: 39%;
-
+    position: absolute;
+    top: 60%;
+    left: 40%;
 }
-
 
 #siteLoader {
     position: static;
@@ -72,6 +67,7 @@ h2 {
     margin: 0;
     height: auto;
     right: 0;
+    color:white;
 }
 
 #ui-buttons li, #ui-buttons li:hover {
@@ -79,10 +75,11 @@ h2 {
     border-radius: 50%;
     margin: 0 5px;
     padding: 0;
+
 }
 
 .exit:hover {
-    color: #ea4335;
+    color: red;
 }
 
 .help:hover {
@@ -101,8 +98,8 @@ h2 {
 
 /*pinwheel animation*/
 .main-container {
-    left: 46.4%;
-    top: 30%;
+    left: 47%;
+    top: 31%;
     width: 100px;
     height: 100px;
     margin: 30px auto;
